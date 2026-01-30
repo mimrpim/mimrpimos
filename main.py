@@ -15,33 +15,11 @@ import libraries.commands as commands
 import libraries.utilities as utilities
 
 def variables_init():
-    global pc_name, username, command, commands_list, actual_directory
+    global pc_name, username, command, actual_directory
     pc_name = platform.node()
     username = getpass.getuser()
     command = ""
     actual_directory = os.getcwd()
-    commands_list = [
-        "help",
-        "update",
-        "shutdown",
-        "reboot",
-        "clear",
-        "cls",
-        "exit",
-        "cd"
-    ]
-
-def setup_history():
-    # Cesta, kam se historie uloží (ve tvé domovské složce)
-    history_file = os.path.expanduser("~/.python_shell_history")
-    
-    # Pokud soubor s historií existuje, načti ho
-    if os.path.exists(history_file):
-        readline.read_history_file(history_file)
-    
-    # Nastavíme automatické ukládání při ukončení programu
-    import atexit
-    atexit.register(readline.write_history_file, history_file)
 
 def check_internet():
     try:

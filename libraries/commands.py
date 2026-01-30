@@ -1,3 +1,20 @@
+import os
+import sys
+import subprocess
+import time
+
+global commands_list
+commands_list = [
+    "help",
+    "update",
+    "shutdown",
+    "reboot",
+    "clear",
+    "cls",
+    "exit",
+    "cd"
+    ]
+
 def shutdown():
     print("Shutting down the system...")
     subprocess.run(['sudo', 'shutdown', '-h', 'now'], check=True)
